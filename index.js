@@ -16,6 +16,7 @@ client.on('message', (message) =>{
         if (message.content.startsWith('creerdonjon')){
             message.channel.send("Donjon - " + mots[1] + " - " + mots[2] + " - 21h30 - lvl " + mots[3] + "+ -\n🛡️ Tank -\n🏥 Heal -\n⚔️ Dps -")
             .catch(console.error)
+            message.delete()
         }
         if (message.content.startsWith('Donjon - ')){
             message.react('🛡️')

@@ -22,11 +22,11 @@ client.on('message', (message) =>{
             message.react('🏥')
             message.react('⚔️')
         }
-        message.awaitReactions()
     }
     if (message.content == ('actualise')){
         message.channel.messages.fetch()
         message.channel.send("actualisé")
+        message.delete()
     }
 })
 

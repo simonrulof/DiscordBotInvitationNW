@@ -1,6 +1,5 @@
-const { Client, DiscordAPIError } = require('discord.js')
+const { Client, DiscordAPIError, MessageCollector, Message } = require('discord.js')
 const config = require('./config.json')
-
 const client = new Client({
     partials: ['GUILD_MEMBER', 'CHANNEL', 'USER', 'REACTION']
 })
@@ -23,6 +22,11 @@ client.on('message', (message) =>{
             message.react('🏥')
             message.react('⚔️')
         }
+        message.awaitReactions()
+    }
+    if (message.content == ('actualise')){
+        message.channel.messages.fetch()
+        message.channel.send("actualisé")
     }
 })
 

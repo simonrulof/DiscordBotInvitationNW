@@ -28,6 +28,9 @@ client.on('message', (message) =>{
         message.channel.send("actualisé")
         message.delete()
     }
+    if (message.content == ('actualisé')){
+        setTimeout(() => {message.delete();}, 3000)
+    }
 })
 
 
